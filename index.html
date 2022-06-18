@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>revanced helper</title>
+</head>
+<body>
+    <div class="page">
+        <div class="top"></div>
+        <h1>revanced helper</h1>
+        <details>
+            <summary>what to do before running the command?</summary>
+            <p>(thanks to paget96projects for <a href="https://www.paget96projects.com/guides/revanced-is-here-and-here-is-how-you-can-install-it">this article</a>, i took most of this part from there)</p>
+            <h3>1. get JDK 17</h3>
+            <p>if you do not have jdk 17 you can download if from <a href="https://adoptium.net/temurin/releases/?version=17">here</a> (choose your OS and architecture)</a> <br>
+            to verify run "java --version" (without the quotation mark)</p>
+            <h3>2. Download the files</h3>
+            <p>you need these files:
+                <ul>
+                    <li><a href="https://github.com/revanced/revanced-cli/releases">revanced cli</a> (file name is going to be something like revanced-cli-X.X.X-all.jar)</li>
+                    <li><a href="https://github.com/revanced/revanced-patches/releases">revanced patches</a> (download the jar)</li>
+                    <li><a href="https://github.com/revanced/revanced-integrations/releases">revanced integrations</a> (download the apk)</li>
+                    <li><a href="https://www.apkmirror.com/apk/google-inc/youtube/youtube-17-22-36-release/youtube-17-22-36-2-android-apk-download/">youtube apk version 17.22.36</a></li>
+                </ul>
+            </p>
+            <h3>3. renaming files (so it works with the command)</h3>
+            <p>(X is a random number)
+                <ul>
+                    <li>rename <b>"revanced-cli-X.X.X-all.jar"</b> to <b>"revanced-cli.jar"</b></li>
+                    <li>rename <b>"revanced-patches-X.X.X.jar"</b> to <b>"revanced-patches.jar"</b></li>
+                    <li>rename <b>"app-release-unsigned.apk"</b> to <b>"integrations.apk"</b></li>
+                    <li>rename the youtube apk (it has a long name) to <b>"youtube.apk"</b></li>
+                </ul>
+            </p>
+            <h3>4. get microG</h3>
+            <p>you can download it from the <a href="https://microg.org/download.html">the official website</a> (Services Core) <br>
+                another way is to download <a href="https://f-droid.org/en/">F-Droid</a>, add <a href="https://apt.izzysoft.de/fdroid/">IzzyOnDroid F-Droid Repository</a>, and download <b>Vanced microG</b>
+            </p>
+            <h3>5. install youtube</h3>
+            <p>disable youtube from your android device and install youtube.apk (the one you downloaded)</p>
+            <h3>6. setting up</h3>
+            <p>enable USB Debugging (you can use <a href="https://www.paget96projects.com/guides/grant-permissions-over-adb">this guide</a>), <br>
+            run "adb devices" and get the device ID (it is before "device")</p>
+        </details>
+        <hr noshade>
+        <h3>command generator</h3>
+        <div class="patches">
+            <details>
+                <summary>ad</summary>
+                <input type="checkbox" id="general-resource-ads" oninput="generate()">
+                <label for="general-resource-ads">general-resource-ads <span class="desc">Patch to remove general ads in resources.</span></label>
+                <br>
+                <input type="checkbox" id="video-ads" oninput="generate()">
+                <label for="video-ads">video-ads <span class="desc">Patch to remove ads in the YouTube video player.</span></label>
+            </details>
+            <br>
+            <details>
+                <summary>interaction</summary>
+                <input type="checkbox" id="seekbar-tapping" oninput="generate()">
+                <label for="seekbar-tapping">seekbar-tapping <span class="desc">Enable tapping on the seekbar of the YouTube player.</span></label>
+            </details>
+            <br>
+            <details>
+                <summary>layout</summary>
+                <input type="checkbox" id="amoled" oninput="generate()">
+                <label for="amoled">amoled <span class="desc">Enables pure black theme.</span></label>
+                <br>
+                <input type="checkbox" id="premium-heading" oninput="generate()">
+                <label for="premium-heading">premium-heading <span class="desc">Show the premium branding on the the YouTube home screen.</span></label>
+                <br>
+                <input type="checkbox" id="custom-branding" oninput="generate()">
+                <label for="custom-branding">custom-branding <span class="desc">Change the branding of YouTube.</span></label>
+                <br>
+                <input type="checkbox" id="hide-cast-button" oninput="generate()">
+                <label for="hide-cast-button">hide-cast-button <span class="desc">Patch to hide the cast button.</span></label>
+                <br>
+                <input type="checkbox" id="disable-create-button" oninput="generate()">
+                <label for="disable-create-button">disable-create-button <span class="desc">Disable the create button.</span></label>
+                <br>
+                <input type="checkbox" id="minimized-playback" oninput="generate()">
+                <label for="minimized-playback">minimized-playback <span class="desc">Enable minimized and background playback.</span></label>
+                <br>
+                <input type="checkbox" id="old-quality-layout" oninput="generate()">
+                <label for="old-quality-layout">old-quality-layout <span class="desc">Enable the original quality flyout menu.</span></label>
+                <br>
+                <input type="checkbox" id="hide-reels" oninput="generate()">
+                <label for="hide-reels">hide-reels <span class="desc">Hide reels on the page.</span></label>
+                <br>
+                <input type="checkbox" id="disable-shorts-button" oninput="generate()">
+                <label for="disable-shorts-button">disable-shorts-button <span class="desc">Hide the shorts button.</span></label>
+            </details>
+            <br>
+            <details>
+                <summary>misc</summary>
+                <input type="checkbox" id="integrations" oninput="generate()">
+                <label for="integrations">integrations <span class="desc">Applies mandatory patches to implement the ReVanced integrations into the application.</span></label>
+                <br>
+                <input type="checkbox" id="locale-config-fix" oninput="generate()">
+                <label for="locale-config-fix">locale-config-fix <span class="desc">Fix an error when building the resources by patching the manifest file.</span></label>
+                <br>
+                <input type="checkbox" id="resource-id-mapping-provider-resource-patch-dependency" oninput="generate()">
+                <label for="resource-id-mapping-provider-resource-patch-dependency">resource-id-mapping-provider-resource-patch-dependency <span class="desc">This patch acts as a provider/ dependency for resource mappings.</span></label>
+                <br>
+                <input type="checkbox" id="microg-support" oninput="generate()">
+                <label for="microg-support">microg-support <span class="desc">Patch to allow YouTube ReVanced to run without root and under a different package name.</span></label>
+            </details>
+            <br>
+        </div>
+        <input type="text" id="deviceid" placeholder="your device ID" oninput="generate()">
+        <div class="cmdcontainer" id="cmdcontainer">helo this is comand</div>
+        <div class="copy" onclick="copycommand()">copy</div>
+        <p>this tool is not affiliated with <a href="https://github.com/revanced">revanced</a></p>
+    </div>
+</body>

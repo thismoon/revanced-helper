@@ -1,0 +1,21 @@
+<body>
+    <input id="name">
+    <input id="desc">
+    <button onclick="generate()">generate</button> <br>
+    <textarea id="result" cols="100" spellcheck="false"></textarea>
+</body>
+<script>
+    function generate() {
+        code1 = "<input type=\"checkbox\" id=\""
+        code2 = `\" oninput=\"generate()">
+            <label for=\"`
+        code3 = "\">"
+        code4 = " <span class=\"desc\">"
+        code5 = `</span></label>
+            <br>`
+        name = document.getElementById("name").value;
+        desc = document.getElementById("desc").value;
+        code = code1 + name + code2 + name + code3 + name + code4 + desc + code5
+        document.getElementById("result").value = code
+}
+</script>

@@ -1,0 +1,1 @@
+java -jar revanced-cli.jar -a youtube.apk -c -d ID -o revanced.apk -b revanced-patches.jar -m integrations.apk (patches) --install

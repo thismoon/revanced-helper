@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+body{background-color: black; color: white; font-family: 'Roboto', sans-serif;}
+.page{
+    max-width: 600px;
+    padding: 20px;
+    padding-top: 10px;
+    background-color: rgb(20, 20, 20);
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+}
+a{color: dodgerblue; text-decoration: none;}
+summary{cursor: pointer;color: antiquewhite;}
+hr{color: white}
+label{user-select: none}
+.cmdcontainer{
+    margin-top: 20px;
+    padding: 5px;
+    border: rgb(40, 40, 40) 1px solid;
+    border-radius: 5px;
+    background-color: rgb(30, 30, 30);
+    font-family: 'Roboto Mono', monospace;
+    word-wrap: break-word;
+}
+.copy{
+    background-color: rgb(30, 30, 30);
+    border-radius: 0px 0px 5px 5px;
+    width: fit-content;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: 10px;
+    border-left: 1px solid rgb(40, 40, 40);
+    border-right: 1px solid rgb(40, 40, 40);
+    border-bottom: 1px solid rgb(40, 40, 40);
+    margin-top: -1px;
+    color: antiquewhite;
+    cursor: pointer;
+    user-select: none;
+}
+.copy:active{
+    background-color: rgb(35, 35, 35);
+}
+.desc{color: grey;}
+input[type=text] {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+input[type=text]:focus{outline: antiquewhite solid 1px;}
+.top{
+    width: 40px;
+    height: 3px;
+    background-color: grey;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
