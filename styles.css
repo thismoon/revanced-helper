@@ -58,3 +58,10 @@ input[type=text]:focus{outline: antiquewhite solid 1px;}
     margin-right: auto;
     border-radius: 5px;
 }
+.oldpage{
+    opacity: 50%;
+    transition-duration: 0.1s;
+}
+.oldpage:hover{
+    opacity: 100%;
+}
